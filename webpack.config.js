@@ -1,11 +1,20 @@
-const path = require('path');
+const path = require("path");
 
 module.exports = {
-  entry: "./src/app.js",
+  entry: path.resolve(__dirname, "./src/index.js"),
   mode: "development",
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "main.js"
   },
-  devtool: "sourcemap"
+  devtool: "sourcemap",
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader'
+      }
+    ]
+  }
 };
