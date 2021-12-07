@@ -4,31 +4,33 @@ export default class extends Controller {
   static targets = ["carsList"]
 
   connect() {
-    this.garageName = "garage-146"
+    this.garageName = "146"
     this.garageUrl = `https://wagon-garage-api.herokuapp.com/${this.garageName}/cars`
-    this._refreshCars
+    this._refreshCars()
   }
 
   createCar(event) {
     event.preventDefault()
     const formData = new FormData(event.currentTarget)
+    const myNewCar = Object.fromEntries(formData)
     fetch(this.garageUrl, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: formData
+      body: JSON.stringify(myNewCar)
     })
-    .then(() => this._refreshCars(this))
+    .then(() => this._refreshCars())
   }
 
   _refreshCars() {
     fetch(this.garageUrl)
     .then(response => response.json())
     .then((data) => {
-      data.forEach((car) => this._insertCar(car, this))
+      this.carsListTarget.innerHTML = ""
+      data.forEach(car => this._insertCarCard(car))
     });
   }
 
-  _insertCar(car) {
+  _insertCarCard(car) {
     const carCard = `<div class="car">
       <div class="car-image">
         <img src="http://loremflickr.com/300/300/${car.brand}%20${car.model}">
