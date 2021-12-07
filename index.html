@@ -21,7 +21,7 @@
             Reasonable price, always on time, we are the awesome (and fictional).
           </div>
           <div class="text-center">
-            <form class="car-form">
+            <form class="car-form" data-action="submit->garage#createCar">
               <input type="text" class="form-control" placeholder="Ferrari">
               <input type="text" class="form-control" placeholder="308 GTS">
               <input type="text" class="form-control" placeholder="56E-478">
@@ -31,7 +31,7 @@
           </div>
         </div>
       </div>
-      <div class="cars-list">
+      <div class="cars-list" data-garage-target="carsList">
         <!-- NOTE: The team designer left you this template for a car. Enjoy! -->
         <!--
         <div class="car">
