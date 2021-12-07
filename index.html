@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="stylesheets/style.css">
   </head>
   <body>
-    <div class="app">
-      <div class="garage" data-controller="garage">
+    <div class="garage" data-controller="garage">
+      <div class="sidebar">
         <div class="garage-image" style="background:linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.4)), url('images/garage.jpg');">
           <div class="garage-logo">
             <img src="images/white_logo_red_circle.png" alt=""/>
@@ -21,12 +21,12 @@
             Reasonable price, always on time, we are the awesome (and fictional).
           </div>
           <div class="text-center">
-            <form class="car-form" id="new-car">
-              <input id="brand" type="text" class="form-control" placeholder="Ferrari" />
-              <input id="model" type="text" class="form-control" placeholder="308 GTS" />
-              <input id="plate" type="text" class="form-control" placeholder="56E-478" />
-              <input id="owner" type="text" class="form-control" placeholder="Thomas Magnum" />
-              <input type="submit" class="btn btn-cta" value="Add a Car" />
+            <form class="car-form">
+              <input type="text" class="form-control" placeholder="Ferrari">
+              <input type="text" class="form-control" placeholder="308 GTS">
+              <input type="text" class="form-control" placeholder="56E-478">
+              <input type="text" class="form-control" placeholder="Thomas Magnum">
+              <input type="submit" class="btn btn-cta" value="Add a Car">
             </form>
           </div>
         </div>
