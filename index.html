@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="stylesheets/style.css">
   </head>
   <body>
-    <div class="app">
-      <div class="garage">
+    <div class="garage" data-controller="garage">
+      <div class="sidebar">
         <div class="garage-image" style="background:linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.4)), url('images/garage.jpg');">
           <div class="garage-logo">
             <img src="images/white_logo_red_circle.png" alt=""/>
@@ -18,20 +18,20 @@
           <h3 class="text-center">Le Wagon</h3>
           <div class="garage-description">
             Our garage is the best.
-            Reasonable price, always on time, we are the awesome (and fictionnal).
+            Reasonable price, always on time, we are the awesome (and fictional).
           </div>
           <div class="text-center">
-            <form class="car-form" id="new-car">
-              <input id="brand" type="text" class="form-control" placeholder="Ferrari" />
-              <input id="model" type="text" class="form-control" placeholder="308 GTS" />
-              <input id="plate" type="text" class="form-control" placeholder="56E-478" />
-              <input id="owner" type="text" class="form-control" placeholder="Thomas Magnum" />
-              <input type="submit" class="btn btn-cta" value="Add a Car" />
+            <form class="car-form" data-action="submit->garage#createCar">
+              <input name="brand" type="text" class="form-control" placeholder="Ferrari">
+              <input name="model" type="text" class="form-control" placeholder="308 GTS">
+              <input name="owner" type="text" class="form-control" placeholder="56E-478">
+              <input name="plate" type="text" class="form-control" placeholder="Thomas Magnum">
+              <input type="submit" class="btn btn-cta" value="Add a Car">
             </form>
           </div>
         </div>
       </div>
-      <div class="cars-list">
+      <div class="cars-list" data-garage-target="carsList">
         <!-- NOTE: The team designer left you this template for a car. Enjoy! -->
         <!--
         <div class="car">

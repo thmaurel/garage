@@ -1,11 +1,11 @@
 body {
   background-color: whitesmoke;
 }
-.app {
+.garage {
   display: flex;
   height: 100vh;
 }
-.garage {
+.sidebar {
   width: 25%;
   background-color: white;
 }
